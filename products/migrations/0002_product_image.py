@@ -14,6 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='product',
             name='image',
-            field=models.ImageField(blank=True, null=True, upload_to=products.models.image_name),
+            field=models.ImageField(
+                blank=True, null=True, upload_to=products.models.upload_to),
         ),
     ]

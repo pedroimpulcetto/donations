@@ -5,8 +5,8 @@ from users.models import User
 from .status import Status
 
 
-def image_name(instance, filename):
-    return f"{instance.product_id}-{filename}"
+def upload_to(instance, filename):
+    return f'images/{filename}/{instance.product_id}'
 
 
 class Product(models.Model):
@@ -16,12 +16,13 @@ class Product(models.Model):
     title = models.CharField(max_length=255, blank=False, null=False)
     description = models.CharField(max_length=255)
     image = models.ImageField(
-        upload_to=image_name, blank=True, null=True)
+        upload_to=upload_to, blank=True, null=True)
     user_id_donor = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='products', blank=False, null=False)
     user_id_recipient = models.ForeignKey(
         User, on_delete=models.CASCADE, blank=True, null=True)
-    status = models.CharField(max_length=255, choices=Status.choices(), blank=False, null=False, default=Status.OPEN)
+    status = models.CharField(max_length=255, choices=Status.choices(
+    ), blank=False, null=False, default=Status.OPEN.value)
 
     class Meta:
         managed = True

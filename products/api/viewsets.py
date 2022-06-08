@@ -8,7 +8,10 @@ from products.models import Product
 class ProductFilters(FilterSet):
     class Meta:
         model = Product
-        fields = ['status']
+        fields = {
+            'status': ['exact'],
+            'user_id_donor': ['exact']
+        }
 
 
 class ProductViewSet(viewsets.ModelViewSet):
