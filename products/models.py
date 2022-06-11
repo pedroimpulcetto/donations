@@ -6,7 +6,7 @@ from .status import Status
 
 
 def upload_to(instance, filename):
-    return f'images/{filename}/{instance.product_id}'
+    return f'images/{instance.product_id}/{filename}'
 
 
 class Product(models.Model):
