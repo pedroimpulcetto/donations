@@ -23,14 +23,14 @@ class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
     filterset_class = ProductFilters
 
-    @action(detail=False, url_path='(?P<user_id>[^/.]+)/pendentes', methods=['get'])
+    @action(detail=False, url_path='(?P<user_id>[^/.]+)/pendents', methods=['get'])
     def pendents(self, request, **kwargs):
         user = kwargs.get('user_id')
         list_products = Product.objects.exclude(user_id_donor=user).filter(status=Status.OPEN.value)
         list_products_response = self.serializer_class(list_products, many=True)
         return Response(list_products_response.data, status=status.HTTP_200_OK)
 
-    @action(detail=False, url_path='(?P<user_id>[^/.]+)/minhas-doacoes', methods=['get'])
+    @action(detail=False, url_path='(?P<user_id>[^/.]+)/donations', methods=['get'])
     def myDonations(self, request, **kwargs):
         user = kwargs.get('user_id')
         list_products = Product.objects.filter(user_id_donor=user) | Product.objects.filter(user_id_recipient=user)
