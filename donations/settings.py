@@ -152,3 +152,11 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'mediafiles')
 MEDIA_URL = '/media/'
 
 django_heroku.settings(locals())
+
+AWS_ACCESS_KEY_ID = 'AKIAS2QH75HJW5GEGSG5'
+AWS_SECRET_ACCESS_KEY = 'BdTptmAUj1cNjq0euORn2ttaT8geOuH'
+AWS_STORAGE_BUCKET_NAME = 'pi-donations-images'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
