@@ -149,13 +149,13 @@ CORS_ALLOW_ALL_ORIGINS = True
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # URL used to access the media
-MEDIA_URL = 'media'
+MEDIA_URL = 'media/'
 
 django_heroku.settings(locals())
 
-AWS_ACCESS_KEY_ID = 'AKIAS2QH75HJW5GEGSG5'
-AWS_SECRET_ACCESS_KEY = 'BdTptmAUj1cNjq0euORn2ttaT8geOuH'
-AWS_STORAGE_BUCKET_NAME = 'pi-donations-images'
+AWS_ACCESS_KEY_ID = 'AKIAS2QH75HJVTEYOQOC'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'pi-donation-images'
 AWS_S3_REGION_NAME = 'us-east-1'
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_FILE_OVERWRITE = False
