@@ -156,6 +156,7 @@ django_heroku.settings(locals())
 AWS_ACCESS_KEY_ID = 'AKIAS2QH75HJW5GEGSG5'
 AWS_SECRET_ACCESS_KEY = 'BdTptmAUj1cNjq0euORn2ttaT8geOuH'
 AWS_STORAGE_BUCKET_NAME = 'pi-donations-images'
+AWS_S3_REGION_NAME = 'us-east-1'
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
