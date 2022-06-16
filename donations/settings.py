@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 import django_heroku
 from pathlib import Path
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -153,9 +155,9 @@ MEDIA_URL = 'media/'
 
 django_heroku.settings(locals())
 
-AWS_ACCESS_KEY_ID = 'AKIAS2QH75HJVTEYOQOC'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'pi-donation-images'
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = 'us-east-1'
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_FILE_OVERWRITE = False
